@@ -55,6 +55,12 @@ const API_BASE_URL =
   process.env.NEXT_PUBLIC_API_BASE_URL ?? "http://localhost:5000";
 const TOKEN_KEY = "devtrack_token";
 
+// Temporary debug to verify API base URL at runtime
+if (typeof window !== "undefined") {
+  // eslint-disable-next-line no-console
+  console.log("[DevTrack] API_BASE_URL =", API_BASE_URL);
+}
+
 type TaskStatus = "todo" | "in_progress" | "in_review" | "done";
 
 type Priority = "Low" | "Medium" | "High";
